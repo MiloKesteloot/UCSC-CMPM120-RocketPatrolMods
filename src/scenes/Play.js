@@ -62,7 +62,7 @@ class Play extends Phaser.Scene {
 	}
 
 	timeFormat() {
-		let seconds = Math.floor(this.timer / 60)
+		let seconds = Math.floor(this.timer / 60) + 1
 		let visualMinutes = Math.floor(seconds/60)
 		let visualSeconds = seconds%60
 		return visualMinutes + ":" + (visualSeconds < 10 ? "0" : "") + visualSeconds;
@@ -119,11 +119,12 @@ class Play extends Phaser.Scene {
 	shipExplode(ship) {
 		// temporarily hide ship
 		ship.alpha = 0;
+
 		// create explosion particles at ship's position
 		const emitter = this.add.particles(0, 0, 'explosion-particle', {
 			// Emitter configuration
 			lifespan: 2000,
-			speed: { min: 50, max: 200 },
+			speed: { min: 0, max: 200 },
 			scale: { start: 1, end: 0 },
 			blendMode: 'ADD'
 		  });

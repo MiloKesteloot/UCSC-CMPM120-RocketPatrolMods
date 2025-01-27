@@ -11,12 +11,9 @@
 // Sources:
 //  * Mouse pointer position: https://stackoverflow.com/questions/28104605/how-to-find-the-mouse-position-x-y-using-phaser
 //  * Particles: perplexity.ai
-//  
 
 
 "use strict"
-
-console.log("hello world")
 
 let config = {
     type: Phaser.AUTO,
